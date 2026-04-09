@@ -1,7 +1,7 @@
-# 🏥 Sehatku – Aplikasi Pencarian Fasilitas Kesehatan
+# 🏥 HealthPoint – Aplikasi Pencarian Fasilitas Kesehatan
  
 ## 📱 Deskripsi Aplikasi 
-**Sehatku** adalah aplikasi mobile berbasis **Flutter** yang dirancang untuk membantu pengguna menemukan **fasilitas kesehatan terdekat di Kota Palembang** secara cepat, akurat, dan real-time. 
+**HealthPoint** adalah aplikasi mobile berbasis **Flutter** yang dirancang untuk membantu pengguna menemukan **fasilitas kesehatan terdekat di Kota Palembang** secara cepat, akurat, dan real-time. 
 
 Aplikasi ini memanfaatkan teknologi **Location-Based Service (LBS)** dengan dukungan **GPS** dan **Google Maps API** untuk memberikan informasi lokasi serta navigasi menuju fasilitas kesehatan seperti rumah sakit, klinik, dan apotek.
 
@@ -168,7 +168,7 @@ Aplikasi ditujukan untuk platform:
 ## 📦 Instalasi Project
 
 ```bash
-git clone https://github.com/username/sehatku.git
-cd sehatku
+git clone https://github.com/FaizZzhue/health-point.git
+cd HealthPoint
 flutter pub get
 flutter run
