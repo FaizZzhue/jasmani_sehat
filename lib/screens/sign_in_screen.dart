@@ -121,7 +121,7 @@ class _SignInScreenState extends State<SignInScreen>
             ),
           ),
           Positioned(
-            bottom: -40,
+            bottom: 40,
             left: -50,
             child: Container(
               width: 200,
@@ -279,33 +279,26 @@ class _SignInScreenState extends State<SignInScreen>
 
                       const SizedBox(height: 36),
 
-                      const Text(
-                        'Welcome back 👋',
-                        style: TextStyle(
-                          fontSize: 34,
-                          fontWeight: FontWeight.w800,
-                          color: Color(0xFF0D1B3E),
-                          height: 1.15,
-                          letterSpacing: -0.5,
+                      Center(
+                        child: const Text(
+                          'Welcome 👋',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 34,
+                            fontWeight: FontWeight.w800,
+                            color: Color(0xFF0D1B3E),
+                            height: 1.15,
+                            letterSpacing: -0.5,
+                          ),
                         ),
                       ),
 
                       const SizedBox(height: 8),
 
-                      Text(
-                        'Sign in to find hospitals, clinics & pharmacies near you.',
-                        style: TextStyle(
-                          fontSize: 14,
-                          color:
-                              const Color(0xFF0D1B3E).withOpacity(0.5),
-                          height: 1.5,
-                        ),
-                      ),
-
                       const SizedBox(height: 32),
 
                       const Text(
-                        'Email address',
+                        'Username',
                         style: TextStyle(
                           fontSize: 13,
                           fontWeight: FontWeight.w600,

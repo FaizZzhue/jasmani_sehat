@@ -27,6 +27,43 @@ class _SignUpScreenState extends State<SignUpScreen>
   late Animation<double> _fadeAnimation;
   late Animation<Offset> _slideAnimation;
 
+  int _passwordStrength = 0;
+  String _strengthText = 'Weak';
+  Color _strengthColor = Colors.red;
+
+  void _checkPasswordStrength(String password) {
+    int strength = 0;
+
+    if (password.length >= 6) strength++;
+    if (RegExp(r'[A-Z]').hasMatch(password)) strength++;
+    if (RegExp(r'[0-9]').hasMatch(password)) strength++;
+    if (RegExp(r'[!@#$%^&*(),.?":{}|<>]').hasMatch(password)) strength++;
+
+    setState(() {
+      _passwordStrength = strength;
+
+      switch (strength) {
+        case 0:
+        case 1:
+          _strengthText = 'Weak';
+          _strengthColor = Colors.red;
+          break;
+        case 2:
+          _strengthText = 'Medium';
+          _strengthColor = Colors.orange;
+          break;
+        case 3:
+          _strengthText = 'Strong';
+          _strengthColor = Colors.blue;
+          break;
+        case 4:
+          _strengthText = 'Very Strong';
+          _strengthColor = Colors.green;
+          break;
+      }
+    });
+  }
+
   Future<void> _signUp() async {
     if (_passwordController.text != _confirmPasswordController.text) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -218,27 +255,21 @@ class _SignUpScreenState extends State<SignUpScreen>
                           children: [
                             const SizedBox(height: 28),
 
-                            const Text(
-                              'Create account ✨',
-                              style: TextStyle(
-                                fontSize: 34,
-                                fontWeight: FontWeight.w800,
-                                color: Color(0xFF0D1B3E),
-                                height: 1.15,
-                                letterSpacing: -0.5,
+                            Center(
+                              child: const Text(
+                                'Create account ✨',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 34,
+                                  fontWeight: FontWeight.w800,
+                                  color: Color(0xFF0D1B3E),
+                                  height: 1.15,
+                                  letterSpacing: -0.5,
+                                ),
                               ),
                             ),
 
                             const SizedBox(height: 8),
-
-                            Text(
-                              'Join HealthPoint and access healthcare services near you.',
-                              style: TextStyle(
-                                fontSize: 14,
-                                color: const Color(0xFF0D1B3E).withOpacity(0.5),
-                                height: 1.5,
-                              ),
-                            ),
 
                             const SizedBox(height: 28),
 
@@ -511,6 +542,7 @@ class _SignUpScreenState extends State<SignUpScreen>
                               child: TextField(
                                 controller: _passwordController,
                                 obscureText: _obscurePassword,
+                                onChanged: _checkPasswordStrength,
                                 style: const TextStyle(
                                   fontSize: 15,
                                   color: Color(0xFF0D1B3E),
@@ -550,58 +582,31 @@ class _SignUpScreenState extends State<SignUpScreen>
 
                             Row(
                               children: [
-                                Expanded(
-                                  child: Container(
-                                    height: 4,
-                                    decoration: BoxDecoration(
-                                      color: const Color(0xFF1A6FE8),
-                                      borderRadius: BorderRadius.circular(4),
+                                ...List.generate(3, (index) {
+                                  return Expanded(
+                                    child: Container(
+                                      margin: EdgeInsets.only(right: index != 2 ? 3 : 0),
+                                      height: 4,
+                                      decoration: BoxDecoration(
+                                        color: index < _passwordStrength
+                                            ? _strengthColor
+                                            : const Color(0xFFE2E8F5),
+                                        borderRadius: BorderRadius.circular(4),
+                                      ),
                                     ),
-                                  ),
-                                ),
-                                const SizedBox(width: 4),
-                                Expanded(
-                                  child: Container(
-                                    height: 4,
-                                    decoration: BoxDecoration(
-                                      color: const Color(0xFF1A6FE8),
-                                      borderRadius: BorderRadius.circular(4),
-                                    ),
-                                  ),
-                                ),
-                                const SizedBox(width: 4),
-                                Expanded(
-                                  child: Container(
-                                    height: 4,
-                                    decoration: BoxDecoration(
-                                      color: const Color(0xFFE2E8F5),
-                                      borderRadius: BorderRadius.circular(4),
-                                    ),
-                                  ),
-                                ),
-                                const SizedBox(width: 4),
-                                Expanded(
-                                  child: Container(
-                                    height: 4,
-                                    decoration: BoxDecoration(
-                                      color: const Color(0xFFE2E8F5),
-                                      borderRadius: BorderRadius.circular(4),
-                                    ),
-                                  ),
-                                ),
+                                  );
+                                }),
                                 const SizedBox(width: 8),
                                 Text(
-                                  'Medium strength',
+                                  _strengthText,
                                   style: TextStyle(
                                     fontSize: 11,
-                                    color: const Color(0xFF1A6FE8)
-                                        .withOpacity(0.8),
+                                    color: _strengthColor,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
                               ],
                             ),
-
                             const SizedBox(height: 16),
 
                             const Text(
@@ -799,13 +804,13 @@ class _SignUpScreenState extends State<SignUpScreen>
                         ),
                       ),
                     ),
-                  ],
-                ),
-              ),
+                  ], 
+                ), 
+              ), 
             ),
           ),
-        ],
-      ),
-    );
-  }
+        ], 
+      ), 
+    ); 
+  } 
 }
