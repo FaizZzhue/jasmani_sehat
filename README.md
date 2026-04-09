@@ -126,6 +126,45 @@ Semua fitur membutuhkan autentikasi (login)
 
 ---
 
+## 📅 Waktu Pengembangan
+- Mulai: April 2026  
+- Selesai: Juni 2026  
+- Durasi: ± 4 bulan  
+
+---
+
+## 📍 Lokasi Pengembangan
+- Universitas Multi Data Palembang  
+- Rumah masing-masing anggota tim 
+- Channel Discord Khusus Development
+
+---
+
+## 👨‍💻 Tim Pengembang
+- Achmad Faiz Yudha Ramadhan  
+- Rizky Apryandi Triadmojo  
+- Wasilah Maulia  
+- Nabila Syahwalrani  
+
+Program Studi: Sistem Informasi  
+Universitas Multi Data Palembang  
+
+---
+
+## 📚 Dasar Proyek
+
+Aplikasi ini dikembangkan berdasarkan proposal:  
+**"Rancang Bangun Aplikasi Mobile Pencarian Fasilitas Kesehatan di Kota Palembang Menggunakan Flutter"**
+
+---
+
+## 📤 Deployment
+
+Aplikasi ditujukan untuk platform:
+- Android (Google Play Store)
+
+---
+
 ## 📦 Instalasi Project
 
 ```bash
