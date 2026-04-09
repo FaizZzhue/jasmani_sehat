@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "412729662792",
+    "project_id": "jasmani-sehat",
+    "storage_bucket": "jasmani-sehat.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412729662792:android:a2c31f5de1ff8b2bb2a77d",
+        "android_client_info": {
+          "package_name": "com.example.jasmani_sehat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJdHwU70P-e07bMhLaVtRg8RzRF5SuLvA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
