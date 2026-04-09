@@ -11,8 +11,8 @@ class StartScreen extends StatelessWidget {
       body: Stack(
         children: [
           Positioned.fill(
-            child: Image.network(
-              'https://img.freepik.com/foto-premium/dokter-wanita-asia-dengan-latar-belakang-putih_1015182-4370.jpg',
+            child: Image.asset(
+              'assets/start.png',
               fit: BoxFit.cover,
               errorBuilder: (context, error, stackTrace) {
                 return Container(
@@ -66,7 +66,7 @@ class StartScreen extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   const Text(
-                    'More Than 100 Trusted\nDoctors are here',
+                    'Welcome Patient',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 22,
